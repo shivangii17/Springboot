@@ -1,8 +1,10 @@
 package com.example.demo;
 
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.stereotype.Component;
 
 @Component
+@ConditionalOnProperty(name = "payment.provider", havingValue = "ropy")
 public class ropy implements pyservice {
 @Override
  public String processPayment()  {
